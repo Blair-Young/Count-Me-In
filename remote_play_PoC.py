@@ -3,7 +3,11 @@ import spotipy.util as util
 import os
 from json.decoder import JSONDecodeError
 import json
+from countin import CountIn
 
+c = CountIn()
+
+# print(os.environ)
 
 username = os.environ['USERNAME']
 scope = 'user-read-private user-read-playback-state user-modify-playback-state'
@@ -30,4 +34,7 @@ if token:
     laptop = 'b26204cd57cda44dc2890dce9444f7fe07c69ea8'
     # conext_uri = 'spotify:album:2587sGXG2drFrrI4ZS1x0B'
     # sp.start_playback(phone, context_uri=conext_uri, offset= {'position':2} )
+    c.count(4)
+
+
     sp.start_playback(phone)
