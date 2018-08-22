@@ -11,8 +11,11 @@ user room to breath before their next big performance.
 ### ToDo List
 - [X] Set up client details with Spotify 
 - [X] Enable device play and pause features remotely
-- [ ] Research count in metronome
-- [ ] Add metronome feature
+- [X] Research count in metronome
+- [X] Add metronome feature
 - [ ] Add command line functionality
 - [ ] Enable different styles of count in
+- [ ] Custom BPM count in
+- [ ] Detect BPM count in
+- [ ] Voice recognition count in
  
