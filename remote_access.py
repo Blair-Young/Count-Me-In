@@ -2,6 +2,7 @@ import spotipy
 import spotipy.util as util
 import os
 from json.decoder import JSONDecodeError
+import json
 
 
 class Remote():
@@ -12,12 +13,11 @@ class Remote():
         self.scope = 'user-read-private user-read-playback-state user-modify-playback-state'
         self.redirect_uri = 'https://google.com/'
         self.token = None
+        self.spotify = self.__access()
 
     def playback(self, device):
-        self.__access()
         if self.token:
-            sp = spotipy.Spotify(auth=self.token)
-            sp.start_playback(device)
+            self.spotify.start_playback(device)
         else:
             print('Error- Token unavailable')
 
@@ -32,3 +32,11 @@ class Remote():
             self.token = util.prompt_for_user_token(self.username, self.scope,
                                                     self.client_id, self.client_secret,
                                                     self.redirect_uri)
+        if self.token:
+            return spotipy.Spotify(auth=self.token)
+        print('Error- Token unavailable')
+
+
+    # def get_song_metadata(self):
+    #     track = self.spotify.audio_analysis("spotify:album:5nM3cUPxqg7iqjaoyeCWtN")
+    #     print(json.dumps(track, indent=4, sort_keys=True))

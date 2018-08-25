@@ -14,6 +14,9 @@ if __name__ == '__main__':
     device = phone
     remote = Remote(username, client_id, client_secret)
 
+    remote.get_song_metadata()
+
+
     count = CountIn()
     count.count(4, bpm)
     remote.playback(device)
