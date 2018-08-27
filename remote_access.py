@@ -4,7 +4,6 @@ import os
 from json.decoder import JSONDecodeError
 import json
 
-
 class Remote():
     def __init__(self, username, client_id, client_secret):
         self.username = username
@@ -36,7 +35,14 @@ class Remote():
             return spotipy.Spotify(auth=self.token)
         print('Error- Token unavailable')
 
+    def get_song_bpm(self):
+        # WIP
+        track =  self.spotify.current_playback()
+        song_uri = track['item']['uri']
+        song_info = self.spotify.audio_analysis(song_uri)
+        return song_info['track']['tempo']
 
-    # def get_song_metadata(self):
-    #     track = self.spotify.audio_analysis("spotify:album:5nM3cUPxqg7iqjaoyeCWtN")
-    #     print(json.dumps(track, indent=4, sort_keys=True))
+    def get_song_metadata(self):
+        # WIP
+        track = self.spotify.audio_analysis("spotify:track:4TTV7EcfroSLWzXRY6gLv6")
+        print(json.dumps(track, indent=4, sort_keys=True))

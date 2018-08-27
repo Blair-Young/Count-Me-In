@@ -15,7 +15,7 @@ user room to breath before their next big performance.
 - [X] Add metronome feature
 - [ ] Add command line functionality
 - [ ] Enable different styles of count in
-- [ ] Custom BPM count in
+- [X] Custom BPM count in
 - [ ] Detect BPM count in
 - [ ] Voice recognition count in
  

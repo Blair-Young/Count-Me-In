@@ -14,7 +14,8 @@ if __name__ == '__main__':
     device = phone
     remote = Remote(username, client_id, client_secret)
 
-    remote.get_song_metadata()
+    # WIP
+    bpm = get_song_bpm
 
 
     count = CountIn()
