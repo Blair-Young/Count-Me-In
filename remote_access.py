@@ -20,6 +20,11 @@ class Remote():
         else:
             print('Error- Token unavailable')
 
+
+    def get_song_bpm(self, song_uri):
+        track = self.spotify.audio_analysis(song_uri)
+        return track['track']['tempo']
+
     def __access(self):
         try:
             self.token = util.prompt_for_user_token(self.username, self.scope,
@@ -34,15 +39,3 @@ class Remote():
         if self.token:
             return spotipy.Spotify(auth=self.token)
         print('Error- Token unavailable')
-
-    def get_song_bpm(self):
-        # WIP
-        track =  self.spotify.current_playback()
-        song_uri = track['item']['uri']
-        song_info = self.spotify.audio_analysis(song_uri)
-        return song_info['track']['tempo']
-
-    def get_song_metadata(self):
-        # WIP
-        track = self.spotify.audio_analysis("spotify:track:4TTV7EcfroSLWzXRY6gLv6")
-        print(json.dumps(track, indent=4, sort_keys=True))
