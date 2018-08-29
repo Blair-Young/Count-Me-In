@@ -13,9 +13,9 @@ user room to breath before their next big performance.
 - [X] Enable device play and pause features remotely
 - [X] Research count in metronome
 - [X] Add metronome feature
-- [ ] Add command line functionality
+- [X] Add command line functionality
 - [ ] Enable different styles of count in
 - [X] Custom BPM count in
-- [ ] Detect BPM count in
+- [X] Detect BPM count in
 - [ ] Voice recognition count in
  
