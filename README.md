@@ -1,5 +1,8 @@
 # Count me in
 
+![](logo.png)
+
+
 
 Picture this. You load up Spotify to play along to your favourite song, you click play
 and rush to grab your instrument. By the time you're comfortable, the song's already
